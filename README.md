@@ -1,6 +1,8 @@
 <img width="2874" height="1797" alt="image" src="https://github.com/user-attachments/assets/bfc239db-ac63-42ec-a4cd-6979b5502671" />
 <img width="2879" height="1799" alt="Screenshot 2025-10-01 162538" src="https://github.com/user-attachments/assets/a12b32f5-7397-460d-a6f6-e5e9bbacb430" />
 <img width="2879" height="1680" alt="image" src="https://github.com/user-attachments/assets/692e717c-b5b7-465d-bf86-cd2319a1d6c8" />
+<img width="1792" height="1056" alt="image" src="https://github.com/user-attachments/assets/6ff45d19-4857-4045-bd70-29a741d1b953" />
+<img width="717" height="1527" alt="Screenshot 2025-10-01 163108" src="https://github.com/user-attachments/assets/ba0302d4-1dde-4c5b-b451-b29baa76d8a2" />
 
 
 # Tech Challenge - Product Page Optimisation
