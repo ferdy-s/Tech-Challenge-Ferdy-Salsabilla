@@ -346,3 +346,50 @@ nav[aria-label="Pagination"] .button[disabled] {
 }
 
 /* controls, badge, carousel, pagination — gunakan versi terakhir yang sudah kamu pasang */
+.detail-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+}
+@media (max-width: 900px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* spec list */
+.spec {
+  margin-top: 16px;
+  display: grid;
+  gap: 10px;
+}
+.spec > div {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px dashed #26334a;
+  padding-top: 10px;
+}
+.spec > div span {
+  color: #8b94a7;
+}
+
+/* simple skeleton */
+.skeleton-line {
+  height: 14px;
+  background: linear-gradient(90deg, #11161f, #17202f, #11161f);
+  border-radius: 10px;
+  margin-top: 14px;
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite;
+}
+.skeleton-line.short {
+  width: 40%;
+}
+@keyframes shimmer {
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

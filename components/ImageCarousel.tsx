@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
+
 export default function ImageCarousel({
   images,
   alt,
@@ -11,19 +12,46 @@ export default function ImageCarousel({
 }) {
   const [index, setIndex] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
+  const startX = useRef(0);
+  const deltaX = useRef(0);
 
   function go(i: number) {
     const next = (i + images.length) % images.length;
     setIndex(next);
   }
 
+  // autoplay
   useEffect(() => {
-    const id = setInterval(() => go(index + 1), 4000);
+    const id = setInterval(() => go(index + 1), 5000);
     return () => clearInterval(id);
-  }, [index]); // autoplay sederhana
+  }, [index, images.length]);
+
+  // swipe gesture
+  function handleTouchStart(e: React.TouchEvent) {
+    startX.current = e.touches[0].clientX;
+  }
+
+  function handleTouchMove(e: React.TouchEvent) {
+    deltaX.current = e.touches[0].clientX - startX.current;
+  }
+
+  function handleTouchEnd() {
+    if (Math.abs(deltaX.current) > 50) {
+      if (deltaX.current > 0) go(index - 1);
+      else go(index + 1);
+    }
+    deltaX.current = 0;
+  }
 
   return (
-    <div className="carousel" role="region" aria-label="Product images">
+    <div
+      className="carousel"
+      role="region"
+      aria-label="Product images"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <div
         ref={trackRef}
         className="carousel-track"
@@ -42,6 +70,7 @@ export default function ImageCarousel({
           </div>
         ))}
       </div>
+
       <div className="carousel-dots" aria-hidden>
         {images.map((_, i) => (
           <button
