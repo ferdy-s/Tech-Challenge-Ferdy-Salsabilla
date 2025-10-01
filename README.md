@@ -1,4 +1,4 @@
-# 🚀 Tech Challenge #2 — Product Page Optimisation
+# Tech Challenge - Product Page Optimisation
 
 Proyek ini dibuat untuk menyelesaikan **Tech Challenge Frontend (Product Page Optimisation)**.  
 Aplikasi menampilkan daftar produk dari REST API `dummyjson.com`, dengan fitur filter kategori, sort, pagination, serta halaman detail produk.  
