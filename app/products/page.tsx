@@ -32,21 +32,19 @@ export default async function ProductsPage({ searchParams }: Props) {
   const sort = searchParams?.sort || undefined;
   const page = Math.max(1, Number(searchParams?.page || 1));
 
-  // Fetch hanya 8 produk sesuai halaman
-  const { products: rawProducts, total } = await fetchProducts({
-    category,
-    page,
-    perPage: PER_PAGE,
-  });
-  const categories = await fetchCategories();
-
-  const products = sortProducts(rawProducts, sort);
+  const [{ products: raw, total }, categories] = await Promise.all([
+    fetchProducts({ category, page, perPage: PER_PAGE }),
+    fetchCategories(),
+  ]);
+  const products = sortProducts(raw, sort);
 
   return (
     <main>
-      <h1 style={{ margin: "8px 0 10px" }}>Products</h1>
+      <div className="title-row">
+        <h1 className="page-title">Products</h1>
+      </div>
 
-      <div className="tools" role="group" aria-label="Tools">
+      <div className="toolbar">
         <CategoryFilter categories={categories} />
         <SortControl />
       </div>
