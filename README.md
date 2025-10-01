@@ -1,4 +1,4 @@
-# Tech Challenge - Product Page Optimisation
+<img width="2874" height="1797" alt="image" src="https://github.com/user-attachments/assets/bfc239db-ac63-42ec-a4cd-6979b5502671" /># Tech Challenge - Product Page Optimisation
 
 Proyek ini dibuat untuk menyelesaikan **Tech Challenge Frontend (Product Page Optimisation)**.  
 Aplikasi menampilkan daftar produk dari REST API `dummyjson.com`, dengan fitur filter kategori, sort, pagination, serta halaman detail produk.  
@@ -58,3 +58,4 @@ npm install
 # jalankan development server
 npm run dev
 ```
+<img width="2874" height="1797" alt="image" src="https://github.com/user-attachments/assets/6ab7a031-1b69-416f-9bb8-afd2b7e456ba" />
